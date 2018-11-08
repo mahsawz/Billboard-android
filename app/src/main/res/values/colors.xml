@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorblack">#080808</color>
+    <color name="colorgray">#c7c7c7</color>
+    <color name="colortransparent">#00ffffff</color>
+    <color name="sormee">#0d205c</color>
+    <color name="white">#ffffff</color>
+</resources>

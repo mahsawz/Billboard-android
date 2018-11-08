@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">بیلبورد</string>
+    <string name="login">ورود</string>
+    <string name="signup">ثبت نام</string>
+    <string name="forgetpass">فراموشی رمز</string>
+    <string name="rememberme">به یاد بسپار</string>
+    <string name="password">رمز عبور</string>
+    <string name="email">ایمیل</string>
+    <string name="billboard">بیلبورد</string>
+    <string name="username">نام کاربری</string>
+    <string name="email1">ایمیل</string>
+    <string name="password1">رمز عبور</string>
+    <string name="confirmpass">تکرار رمز عبور</string>
+    <string name="signup1">ثبت نام</string>
+</resources>
