@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signup_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/fa_light"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/billboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            android:text="@string/billboard"
+            android:textColor="@color/white"
+            android:textSize="40dp" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/email"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_person_white_24dp"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            android:textColorHighlight="@android:color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/email1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/email"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_account_circle_white_24dp"
+            android:hint="@string/email1"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            android:textColorHighlight="@android:color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/password1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/email"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_lock_white_24dp"
+            android:gravity="end"
+            android:hint="@string/password1"
+            android:inputType="numberPassword"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            android:textColorHighlight="@android:color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/confirm_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/email"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ic_lock_white_24dp"
+            android:gravity="end"
+            android:hint="@string/confirmpass"
+            android:inputType="numberPassword"
+            android:padding="15dp"
+            android:textColor="@android:color/white"
+            android:textColorHighlight="@android:color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/signup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_signup"
+            android:padding="15dp"
+            android:shadowColor="@android:color/transparent"
+            android:text="@string/signup1"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
