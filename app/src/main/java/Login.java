@@ -14,7 +14,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.loginpage);
         Button signUp= findViewById(R.id.signup);
         signUp.setOnClickListener(this);
-        
+        LoginInfo loginInfo=new LoginInfo(this,R.id.login_form);
     }
 
     @Override

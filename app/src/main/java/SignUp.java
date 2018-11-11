@@ -8,8 +8,7 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-		
         setContentView(R.layout.signuppage);
-        
+        SignupInfo signUpForm=new SignupInfo(this,R.id.signup_form);
     }
 }
