@@ -8,8 +8,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginInfo implements View.OnClickListener {
     private Context context;
@@ -39,7 +40,7 @@ public class LoginInfo implements View.OnClickListener {
             String emailInput=email.getText().toString().trim();
             String passwordInput=password.getText().toString().trim();
             if (isValidInput(emailInput,passwordInput)){
-                Toast.makeText(context," ok!",Toast.LENGTH_SHORT).show();
+                loginFunc(emailInput,passwordInput);
             }
         }
     }
@@ -54,6 +55,27 @@ public class LoginInfo implements View.OnClickListener {
             this.password.requestFocus();
             return false;}
         return true;
+
+    }
+    private void loginFunc(String emailInput,String passwordInput){
+        final String BASE_URL = "Localhost:port/v1/user/<string:email>&<string:password>";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        //Defining retrofit api service
+        GetDataService service = retrofit.create(GetDataService.class);
+
+        //Defining the user object as we need to pass it with the call
+        LoginUser user = new LoginUser(emailInput, passwordInput);
+
+        //defining the call
+
+        //calling the api
+        Call<LoginUser> call = service.loginUser(emailInput,passwordInput);
+
+        //calling the api
 
     }
 }
