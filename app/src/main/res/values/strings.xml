@@ -12,4 +12,10 @@
     <string name="password1">رمز عبور</string>
     <string name="confirmpass">تکرار رمز عبور</string>
     <string name="signup1">ثبت نام</string>
+    <string name="invalidEmail">ایمیل نامعتبر است</string>
+    <string name="passIsEmpty">ابتدا رمز عبور را وارد کنید</string>
+    <string name="invalidUserName">نام کاربری نمیتواند کمتر از 3 کاراکتر باشد</string>
+    <string name="invalidConfirmPass">عدم تطابق رمز عبور</string>
+    <string name="emptyPass">ابتدا رمز عبور را وارد نمایید</string>
+    <string name="userDoesntExist">ایمیل یا رمز عبور نادرست است</string>
 </resources>
