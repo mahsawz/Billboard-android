@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/login_form"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/back"
@@ -10,127 +9,123 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:weightSum="7"
-    tools:context=".MainActivity">
+    android:id="@+id/login_form"
+    tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/billboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:gravity="center"
-        android:text="@string/billboard"
-        android:textColor="@color/white"
-        android:textSize="40dp" />
+<TextView
+    android:id="@+id/billboard"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="30dp"
+    android:gravity="center"
+    android:text="@string/billboard"
+    android:textColor="@android:color/white"
+    android:textSize="40dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="@font/fa_light"
-        android:gravity="center"
-        android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.5"
+    android:orientation="vertical"
+    android:fontFamily="@font/fa_light">
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/email"
-            android:drawablePadding="10dp"
-            android:drawableRight="@drawable/ic_person_white_24dp"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:padding="15dp"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:textColorHint="@color/white"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/email"
-            android:drawablePadding="10dp"
-            android:drawableRight="@drawable/ic_lock_white_24dp"
-            android:gravity="end"
-            android:hint="@string/password"
-            android:inputType="numberPassword"
-            android:padding="15dp"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:textColorHint="@color/white"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:fontFamily="@font/fa_light"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/remember_me"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:buttonTint="@color/white"
-            android:checked="true"
-            android:text="@string/rememberme"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/forget_pass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:background="@drawable/button_forgetpass"
-            android:buttonTint="@android:color/white"
-            android:drawablePadding="6dp"
-            android:drawableRight="@drawable/ic_lock_white_24dp"
-            android:padding="4dp"
-            android:text="@string/forgetpass"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_weight="2"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:background="@drawable/email"
+        android:drawablePadding="10dp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
-        <Button
-            android:id="@+id/login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/button_login"
-            android:padding="15dp"
-            android:text="@string/login"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/email"
+        android:drawablePadding="10dp"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
-        <Button
-            android:id="@+id/signup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_signup"
-            android:padding="15dp"
-            android:text="@string/signup"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+</LinearLayout>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:fontFamily="@font/fa_light">
+
+    <CheckBox
+        android:id="@+id/remember_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:buttonTint="@android:color/white"
+        android:checked="true"
+        android:text="@string/rememberme"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/forget_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:buttonTint="@android:color/white"
+        android:drawablePadding="6dp"
+
+        android:padding="4dp"
+        android:text="@string/forgetpass"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/email"
+        android:padding="15dp"
+        android:shadowColor="@android:color/transparent"
+        android:text="@string/login"
+        android:textSize="18dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/email"
+        android:padding="15dp"
+        android:shadowColor="@android:color/transparent"
+        android:text="@string/signup"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white" />
+</LinearLayout>
 </LinearLayout>

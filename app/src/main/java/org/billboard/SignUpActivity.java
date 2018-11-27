@@ -1,8 +1,9 @@
-package org.faradars.billboard;
+package org.billboard;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.NonNull;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,10 +13,8 @@ import android.widget.Toast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SignupInfo implements View.OnClickListener {
+public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
     private Context context;
     private LinearLayout signupForm;
     private EditText name;
@@ -23,11 +22,16 @@ public class SignupInfo implements View.OnClickListener {
     private EditText password;
     private EditText confirmPass;
     private Button signUpBtn;
-    public SignupInfo(Activity activity, int layoutID){
-        context=activity.getApplicationContext();
-        signupForm=activity.findViewById(layoutID);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.signuppage);
+        context=this.getApplicationContext();
+        signupForm=this.findViewById(R.id.signup_form);
         init();
     }
+
+
     private void init(){
         name=signupForm.findViewById(R.id.username);
         email=signupForm.findViewById(R.id.email1);
@@ -36,7 +40,6 @@ public class SignupInfo implements View.OnClickListener {
         signUpBtn=signupForm.findViewById(R.id.signup1);
         signUpBtn.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View view) {
         if (view.getId()==signUpBtn.getId()){
@@ -45,7 +48,26 @@ public class SignupInfo implements View.OnClickListener {
             String passwordInput=password.getText().toString().trim();
             String confirm_pass=confirmPass.getText().toString().trim();
             if (isValidInput(username,emailInput,passwordInput,confirm_pass)){
-                signUpFunc(username,emailInput,passwordInput);
+                SignupInfo signupInfo=new SignupInfo(username,emailInput,passwordInput);
+                GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+                Call <User> call = service.createUser(signupInfo);
+                call.enqueue(new Callback<User>() {
+                    @Override
+                    public void onResponse(Call<User> call, Response<User> response) {
+                        if (response.isSuccessful()) {
+                            User user = response.body();
+                            Intent intent = new Intent(SignUpActivity.this, ShowAppActivity.class);
+                            intent.putExtra("user_data", user);
+                            startActivity(intent);
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+
+                    }
+                });
 
             }
         }
@@ -70,36 +92,5 @@ public class SignupInfo implements View.OnClickListener {
             return false;}
         return true;
 
-    }
-    private void signUpFunc(String name,String emailInput,String passwordInput){
-         final String BASE_URL = "Localhost:port/v1/user/<string:email>&<string:password>";
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        //Defining retrofit api service
-        GetDataService service = retrofit.create(GetDataService.class);
-
-        //Defining the user object as we need to pass it with the call
-        User user = new User(name, emailInput, passwordInput);
-
-        //defining the call
-        Call<Result> call = service.createUser(user);
-
-        //calling the api
-        call.enqueue(new Callback<Result>() {
-            @Override
-            public void onResponse(@NonNull Call<Result> call, @NonNull Response<Result> response) {
-                if(response.code()==200)
-                        Toast.makeText(context, response.body() != null ? response.body().getName() : null, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<Result> call, @NonNull Throwable t) {
-                //progressDialog.dismiss();
-                Toast.makeText(context, t.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
     }
 }

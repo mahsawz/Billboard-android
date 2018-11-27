@@ -1,4 +1,4 @@
-package org.faradars.billboard;
+package org.billboard;
 
 import com.google.gson.annotations.SerializedName;
 

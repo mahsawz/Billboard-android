@@ -1,11 +1,11 @@
-package org.faradars.billboard;
+package org.billboard;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClientInstance {
     private static Retrofit retrofit;
-    private static final String BASE_URL = "172.17.10.80:5000";
+    private static final String BASE_URL = "172.17.10.80:5000/";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
