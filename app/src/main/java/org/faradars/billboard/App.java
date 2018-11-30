@@ -1,13 +1,20 @@
-package org.billboard;
+package org.faradars.billboard;
+
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
 public class App implements Serializable {
 
+    @SerializedName("count")
     private int count;
+    @SerializedName("credit")
     private int credit;
+    @SerializedName("download_link")
     private String download_link;
+    @SerializedName("icon")
     private String icon;
+    @SerializedName("name")
     private String name;
 
 
