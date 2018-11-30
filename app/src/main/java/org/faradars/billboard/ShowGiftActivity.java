@@ -21,7 +21,7 @@ public class ShowGiftActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.showgiftpage);
+        setContentView(R.layout.activity_show_gift);
         GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
         Call<GiftShop> call = service.giftShop();
         call.enqueue(new Callback<GiftShop>() {
