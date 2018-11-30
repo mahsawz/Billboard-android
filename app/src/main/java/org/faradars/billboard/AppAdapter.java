@@ -1,4 +1,4 @@
-package org.billboard;
+package org.faradars.billboard;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -20,22 +20,17 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.MyViewHolder> {
     private AdapterView.OnItemClickListener onItemClickListener;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView name, count, credit;
+        public TextView name, count, credit, icon;
         public Button downloadbtn;
-
-        @BindView(R.id.name)
-        TextView Name;
-        @BindView(R.id.count)
-        TextView Count;
-        @BindView(R.id.credit)
-        TextView Credit;
-        @BindView(R.id.downloadbtn)
-        Button Downloadbtn;
 
 
         public MyViewHolder(View view) {
             super(view);
-            ButterKnife.bind(this, view);
+            name = view.findViewById(R.id.name);
+            count = view.findViewById(R.id.count);
+            credit = view.findViewById(R.id.credit);
+            icon = view.findViewById(R.id.icon);
+            downloadbtn = view.findViewById(R.id.downloadbtn);
         }
     }
 
@@ -56,9 +51,10 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, int position) {
         App app = applist.get(position);
 
-        holder.Name.setText(app.getName());
-        holder.Count.setText(app.getCredit());
-        holder.Credit.setText(app.getCount());
+        holder.name.setText(app.getName());
+        holder.count.setText(app.getCredit());
+        holder.credit.setText(app.getCount());
+        holder.icon.setText(app.getIcon());
 //        holder.Downloadbtn.setOnClickListener(onItemClickListener.onItemClick();
     }
 
