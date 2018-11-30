@@ -1,14 +1,14 @@
-package org.billboard;
+package org.faradars.billboard;
 
 public class SignupInfo {
 
         private String password;
-        private String username;
+        private String name;
         private String email;
 
         public SignupInfo(String username, String email,String password) {
             this.password = password;
-            this.username = username;
+            this.name = username;
             this.email=email;
         }
 
@@ -16,8 +16,8 @@ public class SignupInfo {
             return password;
         }
 
-        public String getUsername() {
-            return username;
+        public String getName() {
+            return name;
         }
         public String getEmail() {
         return email;

@@ -1,8 +1,9 @@
-package org.billboard;
+package org.faradars.billboard;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -46,12 +47,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (isValidInput(emailInput, passwordInput)) {
                 LoginInfo logininfo = new LoginInfo(passwordInput, emailInput);
                 GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
-                Call<User> call = service.loginUser(logininfo);
-                call.enqueue(new Callback<User>() {
+                Call<UserResult> call = service.loginUser(logininfo);
+                call.enqueue(new Callback<UserResult>() {
                     @Override
-                    public void onResponse(Call<User> call, Response<User> response) {
-                        if (response.isSuccessful()) {
-                            User user = response.body();
+                    public void onResponse(@NonNull Call<UserResult> call, @NonNull Response<UserResult> response) {
+                        UserResult result=response.body();
+                        assert result != null;
+                        if (result.getStatus().equals("OK")) {
+                            User user = result.getUser();
                             Intent intent = new Intent(LoginActivity.this, ShowAppActivity.class);
                             intent.putExtra("user_data", user);
                             startActivity(intent);
@@ -60,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
 
                     @Override
-                    public void onFailure(Call<User> call, Throwable t) {
+                    public void onFailure(@NonNull Call<UserResult> call, @NonNull Throwable t) {
 
                     }
                 });

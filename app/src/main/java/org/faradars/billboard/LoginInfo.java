@@ -1,4 +1,4 @@
-package org.billboard;
+package org.faradars.billboard;
 
 public class LoginInfo {
     private String password;

@@ -1,4 +1,4 @@
-package org.billboard;
+package org.faradars.billboard;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -12,6 +12,8 @@ public class User implements Parcelable {
     private String name;
     @SerializedName("email")
     private String email;
+    @SerializedName("role")
+    private String role;
 
     protected User(Parcel in) {
         credit = in.readInt();
