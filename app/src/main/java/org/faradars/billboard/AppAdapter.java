@@ -7,22 +7,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
+import com.squareup.picasso.Picasso;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import java.util.List;
 
 public class AppAdapter extends RecyclerView.Adapter<AppAdapter.MyViewHolder> {
 
     private List<App> applist;
-    private AdapterView.OnItemClickListener onItemClickListener;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView name, count, credit, icon;
+        public TextView name, count, credit;
+        public ImageView icon;
         public Button downloadbtn;
-
 
         public MyViewHolder(View view) {
             super(view);
@@ -52,15 +51,13 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.MyViewHolder> {
         App app = applist.get(position);
 
         holder.name.setText(app.getName());
-        holder.count.setText(app.getCredit());
-        holder.credit.setText(app.getCount());
-        holder.icon.setText(app.getIcon());
-//        holder.Downloadbtn.setOnClickListener(onItemClickListener.onItemClick();
+        holder.count.setText(String.valueOf(app.getCount()));
+        holder.credit.setText(String.valueOf(app.getCredit()));
+        Picasso.get().load(app.getIcon()).into(holder.icon);
     }
 
     @Override
     public int getItemCount() {
         return applist.size();
     }
-
 }
