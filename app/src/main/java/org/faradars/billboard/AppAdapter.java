@@ -1,11 +1,13 @@
-package org.faradars.billboard;
+package org.billboard;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,11 +19,12 @@ import java.util.List;
 public class AppAdapter extends RecyclerView.Adapter<AppAdapter.MyViewHolder> {
 
     private List<App> applist;
+    Context mContext;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView name, count, credit;
         public ImageView icon;
-        public Button downloadbtn;
+        public Button downloadBtn;
 
         public MyViewHolder(View view) {
             super(view);
@@ -29,12 +32,13 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.MyViewHolder> {
             count = view.findViewById(R.id.count);
             credit = view.findViewById(R.id.credit);
             icon = view.findViewById(R.id.icon);
-            downloadbtn = view.findViewById(R.id.downloadbtn);
+            downloadBtn = view.findViewById(R.id.downloadbtn);
         }
     }
 
-    public AppAdapter(List<App> applist) {
+    public AppAdapter(List<App> applist, Context context) {
         this.applist = applist;
+        mContext = context;
     }
 
     @NonNull
@@ -48,16 +52,23 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        App app = applist.get(position);
-
-        holder.name.setText(app.getName());
-        holder.count.setText(String.valueOf(app.getCount()));
-        holder.credit.setText(String.valueOf(app.getCredit()));
-        Picasso.get().load(app.getIcon()).into(holder.icon);
+        final App app = applist.get(position);
+        holder.name.setText("نام: " + app.getName());
+        holder.count.setText("تعداد دانلود: " + String.valueOf(app.getCount()));
+        holder.credit.setText("اعتبار: " + String.valueOf(app.getCredit()));
+        Picasso.get().load(app.getIcon()).error(R.drawable.notfound).into(holder.icon);
+        holder.downloadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(app.getDownload_link()));
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return applist.size();
     }
+
 }
