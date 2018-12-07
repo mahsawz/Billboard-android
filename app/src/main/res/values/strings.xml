@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">بیلبورد</string>
+    <string name="login">ورود</string>
+    <string name="signup">ثبت نام</string>
+    <string name="forgetpass">فراموشی رمز</string>
+    <string name="rememberme">به یاد بسپار</string>
+    <string name="password">رمز عبور</string>
+    <string name="email">ایمیل</string>
+    <string name="billboard">بیلبورد</string>
+    <string name="username">نام کاربری</string>
+    <string name="email1">ایمیل</string>
+    <string name="password1">رمز عبور</string>
+    <string name="confirmpass">تکرار رمز عبور</string>
+    <string name="signup1">ثبت نام</string>
+    <string name="invalidEmail">ایمیل نامعتبر است</string>
+    <string name="passIsEmpty">ابتدا رمز عبور را وارد کنید</string>
+    <string name="invalidUserName">نام کاربری نمیتواند کمتر از 3 کاراکتر باشد</string>
+    <string name="invalidConfirmPass">عدم تطابق رمز عبور</string>
+    <string name="emptyPass">ابتدا رمز عبور را وارد نمایید</string>
+    <string name="userDoesntExist">ایمیل یا رمز عبور نادرست است</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="giftshop">گیفت شاپ</string>
+    <string name="cost">قیمت</string>
+    <string name="description">توضیحات</string>
+    <string name="recieve">دریافت</string>
+    <string name="buy_gift_successful">خرید گیفت با موفقیت انجام شد</string>
+
+</resources>
