@@ -27,7 +27,14 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ShowAppActivity" />
         <activity android:name=".ShowGiftActivity" />
+<<<<<<< HEAD
         
+=======
+        <activity
+            android:name=".SidebarMenu"
+            android:label="@string/title_activity_sidebar_menu"
+            android:theme="@style/AppTheme"></activity>
+>>>>>>> 75a632d1f5f8e51bb4ddded9efca4afcd87c78e9
     </application>
 
 </manifest>
