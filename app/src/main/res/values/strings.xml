@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Billboard</string>
+    <string name="app_name">بیلبورد</string>
     <string name="login">ورود</string>
     <string name="signup">ثبت نام</string>
     <string name="forgetpass">فراموشی رمز</string>
@@ -28,4 +28,5 @@
     <string name="action_settings">Settings</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="spinner_title">کتگوری خود را انتخاب کنید:</string>
 </resources>
