@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".BuyGiftActivity">
+
+    <TextView
+        android:layout_width="140pt"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="70pt"
+        android:layout_marginRight="20pt"
+        android:background="@android:color/holo_green_dark"
+        android:fontFamily="@font/fa_light"
+        android:layoutDirection="rtl"
+        android:text="@string/buy_gift_successful"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="140pt"
+        android:layout_height="50pt"
+        android:layout_gravity="right"
+        android:background="@drawable/border"
+        android:layout_marginRight="20pt"
+        android:fontFamily="@font/fa_light"
+        android:layoutDirection="rtl"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/fa_light"
+        android:layoutDirection="rtl"
+        android:text="کد گیفت خریداری شده:"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/giftCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="5pt"
+        android:fontFamily="@font/fa_light"
+        android:layoutDirection="rtl"
+        android:text="کد گیفت"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/backToGiftShop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:layout_marginTop="20pt"
+        android:textSize="18dp"
+        android:text="بازگشت به گیف شاپ"
+        android:layout_marginLeft="20pt"/>
+
+
+</LinearLayout>
