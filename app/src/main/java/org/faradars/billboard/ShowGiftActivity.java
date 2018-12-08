@@ -1,19 +1,13 @@
 package org.faradars.billboard;
 
-<<<<<<< HEAD
 import android.content.Intent;
-=======
->>>>>>> 75a632d1f5f8e51bb4ddded9efca4afcd87c78e9
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-<<<<<<< HEAD
 import android.widget.Toast;
-=======
->>>>>>> 75a632d1f5f8e51bb4ddded9efca4afcd87c78e9
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,18 +16,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-<<<<<<< HEAD
 public class ShowGiftActivity extends AppCompatActivity implements GiftAdapter.OnItemClickListener {
     List<Gift> gifts = new ArrayList<>();
     private RecyclerView recyclerView;
     private GiftAdapter gAdapter;
 
-=======
-public class ShowGiftActivity extends AppCompatActivity {
-    List<Gift> gifts=new ArrayList<>();
-    private RecyclerView recyclerView;
-    private GiftAdapter gAdapter;
->>>>>>> 75a632d1f5f8e51bb4ddded9efca4afcd87c78e9
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,31 +30,19 @@ public class ShowGiftActivity extends AppCompatActivity {
         call.enqueue(new Callback<GiftShop>() {
             @Override
             public void onResponse(@NonNull Call<GiftShop> call, @NonNull Response<GiftShop> response) {
-<<<<<<< HEAD
                 GiftShop giftRes = response.body();
                 assert giftRes != null;
                 gifts = giftRes.getGifts();
                 recyclerView = findViewById(R.id.giftRecycler);
                 gAdapter = new GiftAdapter(gifts, ShowGiftActivity.this);
-=======
-                GiftShop giftRes=response.body();
-                gifts=giftRes.getGifts();
-                recyclerView = findViewById(R.id.giftRecycler);
-                gAdapter = new GiftAdapter(gifts);
->>>>>>> 75a632d1f5f8e51bb4ddded9efca4afcd87c78e9
                 RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                 recyclerView.setLayoutManager(mLayoutManager);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 recyclerView.setAdapter(gAdapter);
-<<<<<<< HEAD
-=======
-
->>>>>>> 75a632d1f5f8e51bb4ddded9efca4afcd87c78e9
             }
 
             @Override
             public void onFailure(@NonNull Call<GiftShop> call, @NonNull Throwable t) {
-<<<<<<< HEAD
                 Toast.makeText(ShowGiftActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -96,13 +71,5 @@ public class ShowGiftActivity extends AppCompatActivity {
 
             }
         });
-=======
-
-
-            }
-        });
-
-
->>>>>>> 75a632d1f5f8e51bb4ddded9efca4afcd87c78e9
     }
 }
