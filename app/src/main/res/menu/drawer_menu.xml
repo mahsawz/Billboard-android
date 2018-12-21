@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="پروفایل" />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="خونه" />
+    <item
+        android:id="@+id/gift_shop"
+        android:icon="@drawable/ic_card_giftcard_black_24dp"
+        android:title="گیفت شاپ" />
+    <item
+        android:id="@+id/gift_history"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:title="تاریخچه گیفت ها" />
+    <item
+        android:id="@+id/setting"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="تنطیمات" />
+    <item
+        android:id="@+id/exit"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:title="خروج" />
+</menu>
