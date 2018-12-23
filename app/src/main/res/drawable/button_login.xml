@@ -15,6 +15,7 @@
         android:color="#ffffff">
     </stroke>
 
+<<<<<<< HEAD
     <selector xmlns:android="http://schemas.android.com/apk/res/android">
         <item android:drawable="@color/colorgray"
             android:state_pressed="true" />
@@ -22,4 +23,6 @@
             android:state_focused="true" />
         <item android:drawable="@color/colortransparent" />
     </selector>
+=======
+>>>>>>> Showapppage
 </shape>

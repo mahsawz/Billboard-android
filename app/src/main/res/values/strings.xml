@@ -18,16 +18,27 @@
     <string name="invalidConfirmPass">عدم تطابق رمز عبور</string>
     <string name="emptyPass">ابتدا رمز عبور را وارد نمایید</string>
     <string name="userDoesntExist">ایمیل یا رمز عبور نادرست است</string>
+<<<<<<< HEAD
     <string name="title_activity_sidebar_menu">SidebarMenu</string>
+=======
+    <string name="title_activity_test_login">Sign in</string>
+    <string name="title_activity_menu">Menu</string>
+>>>>>>> Showapppage
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="giftshop">گیفت شاپ</string>
     <string name="cost">قیمت</string>
     <string name="description">توضیحات</string>
     <string name="recieve">دریافت</string>
 
+=======
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="spinner_title">کتگوری خود را انتخاب کنید:</string>
+>>>>>>> Showapppage
 </resources>

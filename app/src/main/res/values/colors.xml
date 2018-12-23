@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
     <color name="colorblack">#080808</color>
     <color name="colorgray">#c7c7c7</color>
     <color name="colortransparent">#00ffffff</color>
     <color name="sormee">#0d205c</color>
     <color name="white">#ffffff</color>
+=======
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlue">#0d1651</color>
+    <color name="colorGray">#817f80</color>
+    <color name="red">#ee580505</color>
+    <color name="green">#f9083507</color>
+    <color name="colorWhite">#ffff</color>
+    <color name="colorLightGray">#4b4b4b</color>
+    <color name="blue">#e33ec3ef</color>
+    <color name="perple">#e96530bc</color>
+    <color name="bluue">#e02c4e9f</color>
+>>>>>>> Showapppage
 </resources>

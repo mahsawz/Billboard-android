@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package org.faradars.billboard;
+=======
+package org.billboard;
+>>>>>>> Showapppage
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +25,10 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
+<<<<<<< HEAD
         assertEquals("org.faradars.billboard", appContext.getPackageName());
+=======
+        assertEquals("com.example.mahsa.billboard", appContext.getPackageName());
+>>>>>>> Showapppage
     }
 }
