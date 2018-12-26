@@ -3,6 +3,8 @@ package org.faradars.billboard;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
@@ -36,12 +38,15 @@ public class ShowAppActivity extends AppCompatActivity implements AppAdapter.OnI
     private RecyclerView recyclerView;
     private AppAdapter adapter;
     private TextView username, email_user;
-    String appPackage;
+    String appPackage,name;
+    int id;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         appPackage="";
+        name="";
+        id= Integer.parseInt(null);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_app);
         forceRTLIfSupported();
@@ -98,6 +103,51 @@ public class ShowAppActivity extends AppCompatActivity implements AppAdapter.OnI
             }
         });
     }
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+        boolean installed=false;
+        if (name!="") {
+            Context context = this.getApplicationContext();
+            Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+            mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+            final PackageManager pm = getPackageManager();
+            //List<ResolveInfo> pkgAppsList = context.getPackageManager().queryIntentActivities( mainIntent, 0);
+            List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
+            for (ApplicationInfo packageInfo : packages) {
+                //Log.d(TAG, "Installed app :" + pm.getApplicationLabel(packageInfo).toString());
+                if (pm.getApplicationLabel(packageInfo).toString().equals(name)) {
+
+                    installed = true;
+                    break;
+                }
+            }
+            if (installed){
+                GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+                Call<InstallResult> call = service.installApp(id);
+                call.enqueue(new Callback<InstallResult>() {
+                    @Override
+                    public void onResponse(Call<InstallResult> call, Response<InstallResult> response) {
+                        InstallResult installResult=response.body();
+                        if (installResult.getStatus().equals("OK")){
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<InstallResult> call, Throwable t) {
+
+                    }
+                });
+            }
+        }
+
+        //Log.d(TAG, " app name :" + appName);
+
+        //Log.d(TAG, String.valueOf(installed));
+
+    }
 
     //Menu item:
     @Override
@@ -146,7 +196,8 @@ public class ShowAppActivity extends AppCompatActivity implements AppAdapter.OnI
     @Override
     public void onItemClicked(int position) {
         App clicked = apps.get(position);
-        String name = clicked.getName();
+        name = clicked.getName();
+        id=clicked.getId();
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(clicked.getDownload_link()));
         startActivity(intent);
     }
