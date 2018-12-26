@@ -15,6 +15,8 @@ public interface GetDataService {
     @POST("/api/login")
     Call<UserResult> loginUser(
             @Body LoginInfo info);
+    @GET("/api/logout")
+    Call<UserResult> logout();
     @GET("/api/giftshop")
     Call<GiftShop> giftShop();
 
@@ -26,5 +28,11 @@ public interface GetDataService {
 
     @GET("/api/installApp/{app_id}")
     Call<InstallResult>installApp(@Path("app_id") int id);
+
+    @POST("/api/getUser")
+    Call<UserResult> getUser(@Body UserId userid);
+
+    @GET("/api/gifthistory")
+    Call<GiftHistoryResult> getGiftHistory();
 
 }
