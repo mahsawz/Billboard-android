@@ -28,7 +28,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.MyViewHolder> {
             name = view.findViewById(R.id.name);
             count = view.findViewById(R.id.count);
             credit = view.findViewById(R.id.credit);
-            icon = view.findViewById(R.id.icon);
+            icon = view.findViewById(R.id.imageview);
             downloadBtn = view.findViewById(R.id.downloadbtn);
         }
     }
