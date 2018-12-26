@@ -8,6 +8,8 @@ public class App implements Serializable {
 
     @SerializedName("count")
     private int count;
+    @SerializedName("id")
+    private int id;
     @SerializedName("credit")
     private int credit;
     @SerializedName("download_link")
@@ -16,10 +18,17 @@ public class App implements Serializable {
     private String icon;
     @SerializedName("name")
     private String name;
+    @SerializedName("package_name")
+    private String package_name;
+
 
 
     public String getName() {
         return name;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getCount() {
@@ -36,6 +45,10 @@ public class App implements Serializable {
 
     public int getCredit() {
         return credit;
+    }
+
+    public String getPackage_name() {
+        return package_name;
     }
 
     public App(String name, int count, int credit, String icon, String download_link) {
