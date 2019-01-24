@@ -7,9 +7,21 @@
         android:icon="@drawable/ic_account_circle_black_24dp"
         android:title="پروفایل" />
     <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="خانه" />
+    <item
         android:id="@+id/gift_shop"
         android:icon="@drawable/ic_card_giftcard_black_24dp"
         android:title="گیفت شاپ" />
+    <item
+        android:id="@+id/gift_history"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:title="تاریخچه گیفت ها" />
+    <item
+        android:id="@+id/survey"
+        android:icon="@drawable/ic_assignment_black_24dp"
+        android:title="پرسشنامه" />
     <item
         android:id="@+id/setting"
         android:icon="@drawable/ic_settings_black_24dp"
