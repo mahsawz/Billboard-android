@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.faradars.billboard">
+    package="org.billboard">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<<<<<<< HEAD
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-=======
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logooo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/billboard"
->>>>>>> Showapppage
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity">
@@ -30,18 +15,15 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ShowAppActivity" />
-<<<<<<< HEAD
         <activity android:name=".ShowGiftActivity" />
-        <activity
-            android:name=".SidebarMenu"
-            android:label="@string/title_activity_sidebar_menu"
-            android:theme="@style/AppTheme"></activity>
-=======
->>>>>>> Showapppage
+        <activity android:name=".ShowGiftHistoryActivity" />
+        <activity android:name=".BuyGiftActivity" />
+        <activity android:name=".ShowSurveyActivity" />
     </application>
 
 </manifest>
