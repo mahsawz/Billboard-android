@@ -6,17 +6,18 @@ import java.util.List;
 
 public class SurveyResult {
 
-    @SerializedName("apps")
-    private List<Survey> surveys;
+    @SerializedName("survey")
+    private List<Survey> survey;
 
     @SerializedName("status")
     private String status;
 
     public List<Survey> getSurvey() {
-        return surveys;
+        return survey;
     }
 
     public String getStatus() {
         return status;
     }
+
 }
