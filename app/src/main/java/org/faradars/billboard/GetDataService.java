@@ -26,6 +26,9 @@ public interface GetDataService {
     @GET("/api/showSurveys/")
     Call<SurveyResult> getsurveys();
 
+    @GET("/api/fillSurvey/{int:id}")
+    Call<ClickedSurveyResult> fillSurvey(@Path("survey_id") int id);
+
     @GET("/api/shoppingresult/{gift_id}")
     Call<GiftShopResult> buyGift(@Path("gift_id") int id);
 
