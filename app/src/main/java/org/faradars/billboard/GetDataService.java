@@ -1,4 +1,4 @@
-package org.billboard;
+package org.faradars.billboard;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

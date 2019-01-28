@@ -1,4 +1,4 @@
-package org.billboard;
+package org.faradars.billboard;
 
 import android.annotation.TargetApi;
 import android.content.Context;

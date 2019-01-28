@@ -1,4 +1,4 @@
-package org.billboard;
+package org.faradars.billboard;
 
 import android.os.Parcel;
 import android.os.Parcelable;
