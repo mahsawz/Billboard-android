@@ -30,7 +30,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ShowSurveyActivity extends AppCompatActivity implements SurveyAdapter.OnItemClickListener , NavigationView.OnNavigationItemSelectedListener {
+public class ShowSurveyActivity extends AppCompatActivity implements SurveyAdapter.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     List<Survey> surveys;
     private RecyclerView recyclerView;
@@ -126,6 +126,33 @@ public class ShowSurveyActivity extends AppCompatActivity implements SurveyAdapt
             }
         });
     }
+
+    @Override
+    public void onItemClicked(int position) {
+        Survey clicked = surveys.get(position);
+        final int id = clicked.getId();
+        GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+        Call<ClickedSurveyResult> call = service.fillSurvey(id);
+        call.enqueue(new Callback<ClickedSurveyResult>() {
+            @Override
+            public void onResponse(Call<ClickedSurveyResult> call, Response<ClickedSurveyResult> response) {
+                ClickedSurveyResult surveyRes = response.body();
+                assert surveyRes != null;
+                if (surveyRes.getStatus().equals("OK")) {
+                    Survey survey = surveyRes.getSurvey();
+                    Intent intent = new Intent(ShowSurveyActivity.this, FillSurveyActivity.class);
+                    intent.putExtra("survey", survey);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ClickedSurveyResult> call, Throwable t) {
+
+            }
+        });
+    }
+
 
     // Menu item:
     @Override
