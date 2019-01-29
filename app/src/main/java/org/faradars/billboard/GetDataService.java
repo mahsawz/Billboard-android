@@ -23,10 +23,10 @@ public interface GetDataService {
     @GET("/api/showApps/")
     Call<AppsResult> getapps();
 
-    @GET("/api/showSurveys/")
-    Call<SurveyResult> getsurveys();
+    @GET("/api/showSurvey")
+    Call<SurveyResult> getsurvey();
 
-    @GET("/api/fillSurvey/{int:id}")
+    @GET("/api/fillSurvey/{survey_id}")
     Call<ClickedSurveyResult> fillSurvey(@Path("survey_id") int id);
 
     @GET("/api/shoppingresult/{gift_id}")
@@ -37,6 +37,9 @@ public interface GetDataService {
 
     @POST("/api/getUser")
     Call<UserResult> getUser(@Body UserId userid);
+
+    @POST("/api/submitFilling")
+    Call<FillingResponse> submitFilling(@Body FilledSurveyInfo filledSurveyInfo);
 
     @GET("/api/gifthistory")
     Call<GiftHistoryResult> getGiftHistory();
