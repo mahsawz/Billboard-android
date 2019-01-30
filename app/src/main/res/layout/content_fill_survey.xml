@@ -17,7 +17,6 @@
         android:layout_margin="30sp"
         android:gravity="center"
         android:fontFamily="@font/fa_bold"
-        android:text="survey"
         android:textColor="@android:color/white"
         android:textSize="40dp"
         android:textStyle="bold"/>
@@ -25,8 +24,17 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/questionsRecycler"
         android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:scrollbars="vertical">
+    </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical"/>
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
     <Button
         android:id="@+id/submit_survey"
         android:layout_width="match_parent"
@@ -41,5 +49,5 @@
         android:textSize="18dp"
         android:textStyle="bold" />
 
-
+    </LinearLayout>
 </LinearLayout>
